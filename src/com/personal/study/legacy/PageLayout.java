@@ -10,7 +10,12 @@ public class PageLayout {
   private StyleTemplate template;
   
   protected void rebindStyles(){
-	  styles = StyleMaster.formStyles(template, id);
+	  styles = formStyles(template, id);
+  }
+
+  //このメソッドをオーバーライドして依存関係を排除できるようになる
+  protected List formStyles(StyleTemplate template, int id){
+	  return StyleMaster.formStyles(template, id);
   }
 }
 
