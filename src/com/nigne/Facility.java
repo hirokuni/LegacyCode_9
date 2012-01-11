@@ -48,7 +48,7 @@ class Permit {
 }
 
 class PermitRepository {
-	private static PermitRepository obj;
+	private static PermitRepository instance;
 	// singletoneパターン。グローバル変数を使うための仕組みの一つ。
 	// テストにおいて大変なのは、そのクラスがどのグローバル変数を使っているかを
 	// 理解した上で、それらをテストのために適切な状態に設定しなければならないこと。
@@ -60,12 +60,19 @@ class PermitRepository {
 	// このSingletonをそれぞれのテストで適切な状態に設定する必要がある。
 	
 	public static Permit sPermit = new Permit();
+
+	private PermitRepository(){}
+
+	//テスト用のPermitRepositoryインスタンスを作って、それをセットできるようになった。
+	public static void setTestingInstance(PermitRepository newInstance){
+		instance = newInstance;
+	}
 	
 	public static PermitRepository getInstance() {
-		if (obj == null) {
-			return obj = new PermitRepository();
+		if (instance == null) {
+			return instance = new PermitRepository();
 		}
-		return obj;
+		return instance;
 	}
 
 	public Permit findAssociatedPermit(PermitNotice notice) {
