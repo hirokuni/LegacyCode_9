@@ -63,6 +63,11 @@ class PermitRepository {
 
 	private PermitRepository(){}
 
+	//テスト用のPermitRepositoryインスタンスを作って、それをセットできるようになった。
+	public static void setTestingInstance(PermitRepository newInstance){
+		instance = newInstance;
+	}
+	
 	public static PermitRepository getInstance() {
 		if (instance == null) {
 			return instance = new PermitRepository();
