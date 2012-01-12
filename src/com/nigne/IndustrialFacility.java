@@ -3,6 +3,7 @@ package com.nigne;
 public class IndustrialFacility extends Facility {
 	Permit basePermit;
 
+	//コンストラクタに対して渡すべきOriginationPermitを作ることが困難。
 	public IndustrialFacility(int facilityCode, String owner,
 			OriginationPermit permit) throws PermitViolation {
 		super();
