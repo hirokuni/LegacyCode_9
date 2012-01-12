@@ -16,3 +16,5 @@ public class AndroidTestCase {
 	Facility facility = new Facility(Facility.RESIDENCE, "b", notice);
   }
 }
+
+

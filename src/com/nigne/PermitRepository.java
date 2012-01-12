@@ -38,4 +38,9 @@ public class PermitRepository {
 		
 		return new Permit();// 本書では処理が不明なので、適当なコードを追加
 	}
+
+	public Permit findAssociatedFromOrigination(OriginationPermit permit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
