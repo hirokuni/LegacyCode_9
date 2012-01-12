@@ -12,7 +12,7 @@ public class PermitRepository {
 	// このSingletonをそれぞれのテストで適切な状態に設定する必要がある。
 	private static PermitRepository instance;
 
-	private PermitRepository() {
+	protected PermitRepository() {
 	}
 
 	// テスト用のPermitRepositoryインスタンスを作って、それをセットできるようになった。
